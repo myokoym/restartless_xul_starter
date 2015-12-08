@@ -24,4 +24,7 @@ Dir.chdir(project_name) do
     FileUtils.mv("index.txt", "LICENSE")
   end
   system("git", "submodule", "update", "--init")
+  File.write("README.md", <<-README)
+# #{project_name}
+  README
 end
